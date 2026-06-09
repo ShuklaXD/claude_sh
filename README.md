@@ -10,7 +10,7 @@ session started inside this repo. Both do the same thing.
 ## Quick start
 
 ```bash
-git clone <this-repo-url> claude_sh
+git clone git@github.com:ShuklaXD/claude_sh.git
 cd claude_sh
 ./install.sh          # copies settings/hook/skills, registers marketplaces, installs plugins
 claude login          # authenticate once (interactive — not stored in this repo)

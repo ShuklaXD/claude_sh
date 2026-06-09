@@ -126,7 +126,7 @@ attempt to copy or fabricate credentials.
 ## Manual / one-line alternative
 
 ```bash
-git clone <this-repo-url> claude_sh && cd claude_sh && ./install.sh
+git clone git@github.com:ShuklaXD/claude_sh.git && cd claude_sh && ./install.sh
 claude login      # authenticate (interactive, once)
 # restart claude, then:
 claude plugin list
