@@ -1,0 +1,5 @@
+# Never commit secrets or machine state if someone drops them in here
+.credentials.json
+*.bak
+*.bak.*
+.DS_Store

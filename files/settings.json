@@ -1,0 +1,55 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -iE \"sh$|claude|dev|tunnel\")",
+      "Bash(cloudflared --version)",
+      "Bash(tailscale version *)",
+      "Bash(tailscale status *)",
+      "Bash(gh auth *)",
+      "Bash(grep *)",
+      "Bash(git checkout *)",
+      "Bash(git add *)"
+    ],
+    "defaultMode": "auto"
+  },
+  "env": {
+    "NODE_OPTIONS": "--max-old-space-size=6144"
+  },
+  "autoCompactEnabled": true,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/home/fitt/.claude/hooks/block-default-branch-edits.sh",
+            "statusMessage": "Checking git branch (claude-branch-flow)"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "ui-ux-pro-max@ui-ux-pro-max-skill": true,
+    "superpowers@superpowers-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "ui-ux-pro-max-skill": {
+      "source": {
+        "source": "github",
+        "repo": "nextlevelbuilder/ui-ux-pro-max-skill"
+      }
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    }
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark-daltonized",
+  "editorMode": "normal",
+  "agentPushNotifEnabled": true
+}
